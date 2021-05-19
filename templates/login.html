@@ -1,0 +1,61 @@
+{% extends 'home.html' %}
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block body %}
+Login Page Market App <br/>
+<div class="container">
+    <div class="row px-3">
+      <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+        <div class="img-left d-none d-md-flex"></div>
+
+        <div class="card-body">
+          <h4 class="title text-center mt-4">
+            Create your Account
+          </h4>
+          <form method="POST" class="form-box px-3">
+            {{form.hidden_tag()}}
+            <div class="form-input">
+              <span><i class="fa fa-envelope-o"></i></span>
+              {{form.email(placeholder="Email Address")}}
+            </div>
+            <div class="form-input">
+              <span><i class="fa fa-key"></i></span>
+              {{form.passw(placeholder="Password")}}
+            </div>
+
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="cb1" name="">
+                <label class="custom-control-label" for="cb1">Remember me</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              {{form.submit(class="btn btn-block text-uppercase")}}
+            </div>
+
+            <div class="text-right">
+              <a href="#" class="forget-link">
+                Forget Password?
+              </a>
+            </div>
+
+            
+
+            <hr class="my-4">
+
+            <div class="text-center mb-2">
+              Create your Account
+              <a href="{{url_for('rf')}}" class="register-link">
+                Register
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

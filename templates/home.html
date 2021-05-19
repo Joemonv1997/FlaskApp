@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>
+         {% block title %} Home Page {% endblock %}
+      </title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+      <style>
+      body {
+        padding: 25px;
+        background-color: white;
+        color: black;
+        font-size: 25px;
+        }
+
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }   
+      </style>
+   </head>
+   <body>
+      <header class="p-3 bg-dark text-white">
+         <div class="container-lg">
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content mb-md-0">
+               <li class="nav-link px-2 text-white">Computer Component Selector</li>
+               <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+               <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+               <li><a type="button" class="btn btn-outline-light me-2" href="{{url_for('lf')}}">Login</a></li>
+               <li><a type="button" href="{{url_for('rf')}}" class="btn btn-warning" >Register</a></li>
+               <li><button onclick="myFunction()" class="btn btn-warning" >D</button></li>
+            </ul>              
+
+         </div>
+      </header>
+      
+      <br/><br/>
+      
+      {% block body %}{% endblock %}
+      <script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+      }
+</script>
+      <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+      <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+   </body>
+</html>
